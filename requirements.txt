@@ -1,0 +1,16 @@
+pandas
+setuptools
+numpy
+seaborn
+matplotlib
+scikit-learn
+statistics
+statsmodels
+dill
+flask
+touch
+pymongo
+datetime
+xgboost
+imblearn
+-e .

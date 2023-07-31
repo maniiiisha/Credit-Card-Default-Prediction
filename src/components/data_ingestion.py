@@ -5,7 +5,7 @@ from src.logging import logging
 from src.exception import CustomException
 from sklearn.model_selection import train_test_split
 from src.components.data_transformation import DataTransformation, DataTransformationConfig
-#from src.components.model_trainer import odeltrainer, modeltrainingconfig
+#from src.components.model_trainer import modeltrainer, modeltrainingconfig
 from dataclasses import dataclass
 
 
@@ -23,7 +23,7 @@ class dataingestion:
         logging.info('data ingestion started')
         try:
             df = pd.read_csv(os.path.join('notebooks/data','UCI_Credit_Card.csv'))
-            data = df.drop(columns = 'ID', axis=1)
+            data = df#.drop(columns = 'ID', axis=1)
             logging.info('Dataset read as pandas dataframe.')
 
             os.makedirs(os.path.dirname(self.ingestion_config.raw_path), exist_ok=True)

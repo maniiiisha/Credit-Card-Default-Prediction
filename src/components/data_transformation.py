@@ -33,7 +33,7 @@ class DataTransformation:
             
             categorical_pipeline = Pipeline(
                 steps=[('imputer', SimpleImputer(strategy='most_frequent')),
-                       ('encoder', OneHotEncoder())])
+                       ('encoder', OneHotEncoder(handle_unknown = 'ignore'))])
             
             preprocessor = ColumnTransformer([
                 ("numerical_pipeline", numerical_pipeline, numerical_col),

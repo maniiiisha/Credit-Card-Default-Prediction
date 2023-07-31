@@ -50,6 +50,7 @@ class DataTransformation:
             logging.info('data transformation started')
             df_train = pd.read_csv(train_path)
             df_test = pd.read_csv(test_path)
+            target_col_name = ['default.payment.next.month']
 
             logging.info('initializing preprocessor object')
 
@@ -91,14 +92,11 @@ class DataTransformation:
             df_train['SEX'] = df_train['SEX'].replace(to_replace=1, value='male')
             df_test['SEX'] = df_test['SEX'].replace(to_replace=2, value='female')
             df_test['SEX'] = df_test['SEX'].replace(to_replace=1, value='male')
-
-            target_col_name = ['default.payment.next.month']
-            drop_cols = ['ID', 'default.payment.next.month']
             
-            input_feature_train_df = df_train.drop(columns=drop_cols, axis=1)
+            input_feature_train_df = df_train.drop(columns=['ID', 'default.payment.next.month'], axis=1)
             target_feature_train_df = df_train[target_col_name]
 
-            input_feature_test_df = df_test.drop(columns=drop_cols, axis=1)
+            input_feature_test_df = df_test.drop(columns=['ID', 'default.payment.next.month'], axis=1)
             target_feature_test_df = df_test[target_col_name]
 
             input_feature_train_arr = preprocessor_obj.fit_transform(input_feature_train_df)

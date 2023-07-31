@@ -23,7 +23,7 @@ class dataingestion:
         logging.info('data ingestion started')
         try:
             df = pd.read_csv(os.path.join('notebooks/data','UCI_Credit_Card.csv'))
-            data = df.drop(columns = 'ID')
+            data = df.drop(columns = 'ID', axis=1)
             logging.info('Dataset read as pandas dataframe.')
 
             os.makedirs(os.path.dirname(self.ingestion_config.raw_path), exist_ok=True)

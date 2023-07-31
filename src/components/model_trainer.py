@@ -15,7 +15,7 @@ from dataclasses import dataclass
 
 @dataclass
 class ModeltrainerConfig:
-    model_path = os.path.join('artifact','model.pkl')
+    model_path = os.path.join('artifacts','model.pkl')
 
 class modeltrainer:
     def __init__(self):

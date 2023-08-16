@@ -13,4 +13,5 @@ pymongo
 datetime
 xgboost
 imblearn
+gunicorn
 -e .

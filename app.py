@@ -6,8 +6,8 @@ from src.exception import CustomException
 from src.logging import logging
 
 
-application = Flask(__name__)
-app = application
+app = Flask(__name__)
+#app = application
 
 try:
     @app.route('/', methods=['GET'])
